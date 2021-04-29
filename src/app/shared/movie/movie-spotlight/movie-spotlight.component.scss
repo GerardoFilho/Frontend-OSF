@@ -1,0 +1,14 @@
+.header__banner {
+  display: flex;
+  width:100%;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+
+  .title-spotlight {
+    position: absolute;
+    font-size: 3rem;
+    margin-left: 5%;
+    color: lightgray;
+  }
+} 

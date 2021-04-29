@@ -1,0 +1,11 @@
+.movieRow{
+    display: flex;
+    flex-flow: row;
+    margin: 10px 0;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.gender{
+    color: white;
+}
