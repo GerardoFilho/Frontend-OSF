@@ -1,3 +1,13 @@
-p{
-    color: white;
+.movie-details {
+    margin: 5px;
+    h2 {
+        font-weight: 800;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        color: white;
+    }
+    p {
+        color: white;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        border-radius: 5%;
+    }
 }

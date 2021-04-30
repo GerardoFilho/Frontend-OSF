@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MovieService } from 'src/app/services/movie.service';
@@ -9,25 +9,25 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./detail-page.component.scss']
 })
 export class DetailPageComponent implements OnInit {
-
   movie: any;
   subMovie!: Subscription;
   
   movieId: any;
   subMovieId!: Subscription;
 
-  constructor(private movieService: MovieService, private route: ActivatedRoute, private changeDetector: ChangeDetectorRef) {
-
+  constructor(private movieService: MovieService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    console.log("Oii")
+    console.log(this.movieId, "1")
     this.subMovieId = this.route.params.subscribe(routeParams => {
-      this.movieId = routeParams.id;
+      this.movieId = routeParams.id
+      console.log(this.movieId, "2")
 
-      console.log(this.movieId)
       this.subMovie = this.movieService.getMovies(this.movieId).subscribe(response => {
         this.movie = response
+        console.log(this.movieId, "3")
+        console.log(this.movie, "4")
 
       })
     });
@@ -37,11 +37,6 @@ export class DetailPageComponent implements OnInit {
     this.subMovie.unsubscribe();
     this.subMovieId.unsubscribe();
 
-  }
-
-  // Problema com a atualização da pagina detecta alguma mudança na pagina. quando clicava ele nao mudava nada, como se nao tivesse nada no filme
-  ngAfterViewChecked() {
-    this.changeDetector.detectChanges()
   }
 
 }

@@ -6,38 +6,37 @@
 .sidenav {
   width: 200px;
   background-color: rgba(0, 0, 0, 0.7);
-  
 }
 
 .sidenav .mat-toolbar {
   background: inherit;
 }
+
 .mat-toolbar {
   margin: -2.5% 0;
   margin-bottom: -50px;
 }
+
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  
 }
+
 .toolbar {
   background-color: transparent;
 }
+
 .header_change .toolbar {
   position: fixed;
   transition: background 1.25s;
-  background: rgba(0, 0, 0, 0.8) !important;
+  background: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
-  
 }
 
-.icon-menu,
-.img_logo {
+.icon-menu,.img_logo {
   display: flex;
   margin-top: 5%;
-  
 
   li.active {
     a {
@@ -73,7 +72,6 @@ mat-nav-list{
   span {
   color: white;
   font-style: oblique;
-  
   margin-left: 30%;
 
 }

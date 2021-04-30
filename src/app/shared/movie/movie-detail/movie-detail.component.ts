@@ -6,17 +6,14 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.scss']
 })
-export class MovieDetailComponent implements OnInit {
 
+export class MovieDetailComponent implements OnInit {
   @Input() movie: any;
   imagePath: any;
 
   constructor(private movieService: MovieService) { }
-
   ngOnInit(): void {
-
     this.imagePath = this.movieService.imgPath;
 
   }
-
 }

@@ -1,7 +1,7 @@
 .not-fav{
     animation: puff-in-center 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    margin-left: -65px;
-    margin-bottom: 20px;
+    margin-left: -67px;
+    margin-bottom: 17px;
 }
 @keyframes puff-in-center {
     0% {
@@ -24,8 +24,8 @@
 
 .fav{
     animation: puff-out-center 0.3s cubic-bezier(0.670, 0.000, 0.945, 0.915) both;
-    margin-left: -65px;
-    margin-bottom: 20px;
+    margin-left: -67px;
+    margin-bottom: 17px;
 }
 @keyframes puff-out-center {
     0% {

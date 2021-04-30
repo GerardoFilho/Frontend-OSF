@@ -8,26 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  topMovies = [];
-  subTopMovies: Subscription = new Subscription;
-
-  
+  topMovie = [];
+  subTopMovie: Subscription = new Subscription; 
 
   constructor(private movieService: MovieService) {
-
   }
 
   ngOnInit(): void {
-
-    this.subTopMovies = this.movieService.getTopMovies().subscribe(response => {
-      this.topMovies = response.results.slice()
-      console.log(this.topMovies[0])
+    this.subTopMovie = this.movieService.getTopMovies().subscribe(response => {
+      this.topMovie = response.results.slice()
     })
+
   }
 
   ngOnDestroy() {
-    this.subTopMovies.unsubscribe()
+    this.subTopMovie.unsubscribe()
   }
 
 }

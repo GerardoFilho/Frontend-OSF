@@ -7,10 +7,11 @@
     
     <mat-nav-list>
       <img mat-list-item src="../../../../assets/eu.jpg">
-      <span mat-list-item href="#">Gerardo Filho</span>
-      <a mat-list-item href="#">Categories</a>
-      <a mat-list-item href="#">Configuration</a>
-      <a mat-list-item href="#">Profile</a>
+      <span mat-list-item href="#">Gerardo Filho</span><hr>
+      <a mat-list-item href="#">Categories</a><hr>
+      <a mat-list-item href="#">Configurations</a><hr>
+      <a mat-list-item href="#">Profile</a><hr>
+      <a mat-list-item href="#">Sair</a><hr>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -23,7 +24,7 @@
       *ngIf="isHandset$ | async">
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
-      <span class="img_logo"><img src="../../../assets/logo.png" alt="logo"></span>
+      <a class="img_logo" href="#"><img src="../../../assets/logo.png" alt="logo"></a>
       <div class="icon-menu">
         <ul>
           <li><a href="#">
@@ -31,13 +32,12 @@
             </a></li>
         </ul>
         <ul>
-          <li><a href="#">
+          <li><a [routerLink]="['']">
               <mat-icon>home</mat-icon>
             </a></li>
         </ul>
       </div>
     </mat-toolbar>
-    <!-- Add Content Here -->
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
