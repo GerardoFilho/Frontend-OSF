@@ -1,0 +1,46 @@
+.not-fav{
+    animation: puff-in-center 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    margin-left: -65px;
+    margin-bottom: 20px;
+}
+@keyframes puff-in-center {
+    0% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+        color:gray;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+        color: gray;
+    }
+}
+
+.fav{
+    animation: puff-out-center 0.3s cubic-bezier(0.670, 0.000, 0.945, 0.915) both;
+    margin-left: -65px;
+    margin-bottom: 20px;
+}
+@keyframes puff-out-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+        color: red;
+    }
+}

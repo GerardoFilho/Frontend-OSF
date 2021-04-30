@@ -2,7 +2,6 @@ import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Movies } from '../models/movies';
 
 
 const enum endpoint {
@@ -31,24 +30,16 @@ export class MovieService {
     this.imgPath = 'http://image.tmdb.org/t/p/original';
   }
 
-  getImgPath(): string {
-    return this.imgPath;
-  }
-
   getMovies(category: string): Observable<any> {
     return this.http.get(`${environment.base_URL}${endpoint.movie}${category}${this.Params}`);
   }
 
-  // getGenres(): Observable<any> {
-  //   return this.http.get(`${environment.base_URL}${endpoint.genres}${this.Params}`);
-  // }
+  getGenres(): Observable<any> {
+    return this.http.get(`${environment.base_URL}${endpoint.genres}${this.Params}`)
+  }
 
   getMoviesByGenre(genreID: number): Observable<any> {
     return this.http.get(`${environment.base_URL}discover/movie?api_key=${this.api_key}&with_genres=${genreID}`)
-  }
-
-  getGenresMovies(): Observable<any> {
-    return this.http.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.api_key}`)
   }
 
   getTopMovies(): Observable<any> {

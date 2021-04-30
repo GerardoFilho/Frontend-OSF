@@ -24,6 +24,9 @@ import { MenuNavComponent } from './shared/menus/menu-nav/menu-nav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MovieListTemplateComponent } from './shared/movie/movie-list-template/movie-list-template.component';
+import { FavouriteIconComponent } from './shared/favourite-icon/favourite-icon/favourite-icon.component';
+import { DetailPageComponent } from './pages/detail-page/detail-page.component';
+import { MovieDetailComponent } from './shared/movie/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { MovieListTemplateComponent } from './shared/movie/movie-list-template/m
     HomeComponent,
     MenuSidenavComponent,
     MenuNavComponent,
-    MovieListTemplateComponent
+    MovieListTemplateComponent,
+    FavouriteIconComponent,
+    DetailPageComponent,
+    MovieDetailComponent
 
   ],
   imports: [

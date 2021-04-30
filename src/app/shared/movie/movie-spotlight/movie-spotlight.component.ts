@@ -13,8 +13,8 @@ export class MovieSpotlightComponent implements OnInit {
 
   constructor(private movieService: MovieService) {
     this.imgPath = this.movieService.imgPath;
-    console.log(this.movieTop);
   }
+  
   ngOnInit(): void {
   }
 

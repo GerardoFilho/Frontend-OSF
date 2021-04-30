@@ -18,7 +18,7 @@ export class MovieListComponent implements OnInit {
 
   ngOnInit(): void {
     // ---- | CREATE ARRAY OF GENRES | ---0
-    this.subGenres = this.movieService.getGenresMovies().subscribe(response => {
+    this.subGenres = this.movieService.getGenres().subscribe(response => {
       this.genres = response.genres
       for(let i = 0; i < this.genres.length; i++){
         this.separeByGenre(this.genres[i].id)
