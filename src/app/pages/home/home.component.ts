@@ -1,6 +1,7 @@
+import { FirebaseService } from './../../services/firebase.service';
 import { MovieService } from './../../services/movie.service';
 import { Subscription } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @Output() isLogout = new EventEmitter<void>()
   topMovie = [];
   subTopMovie: Subscription = new Subscription; 
 
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService, public firebaseService : FirebaseService) {
   }
 
   ngOnInit(): void {
@@ -19,6 +21,10 @@ export class HomeComponent implements OnInit {
       this.topMovie = response.results.slice()
     })
 
+  }
+  logout(){
+    this.firebaseService.logout()
+    this.isLogout.emit()
   }
 
   ngOnDestroy() {

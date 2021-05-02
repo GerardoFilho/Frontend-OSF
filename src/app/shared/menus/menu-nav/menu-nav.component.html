@@ -1,44 +1,42 @@
-  <div [class.header_change]="header__variable" class="header">
+<div [class.header_change]="header__variable" class="header">
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false">
-    
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'over'" [opened]="(isHandset$ | async) === false">
     <mat-nav-list>
       <img mat-list-item src="../../../../assets/eu.jpg">
-      <span mat-list-item href="#">Gerardo Filho</span><hr>
-      <a mat-list-item href="#">Categories</a><hr>
-      <a mat-list-item href="#">Configurations</a><hr>
-      <a mat-list-item href="#">Profile</a><hr>
-      <a mat-list-item href="#">Sair</a><hr>
+      <span mat-list-item href="#">Gerardo Filho</span>
+      <hr>
+      <a mat-list-item href="#">Categories</a>
+      <hr>
+      <a mat-list-item href="#">Configurations</a>
+      <hr>
+      <a mat-list-item href="#">Profile</a>
+      <hr>
+      <a (click)="logout()" mat-list-item  [routerLink]="[ '' ]" routerLinkActive="active"> Sair</a>
+      <hr>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="toolbar">
-      <button
-      type="button"
-      aria-label="Toggle sidenav"
-      mat-icon-button
-      (click)="drawer.toggle()"
-      *ngIf="isHandset$ | async">
-      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
-      <a class="img_logo" href="#"><img src="../../../assets/logo.png" alt="logo"></a>
-      <div class="icon-menu">
-        <ul>
-          <li><a href="#">
-              <mat-icon>search</mat-icon>
-            </a></li>
-        </ul>
-        <ul>
-          <li><a [routerLink]="['']">
-              <mat-icon>home</mat-icon>
-            </a></li>
-        </ul>
-      </div>
-    </mat-toolbar>
-    <ng-content></ng-content>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+          >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <a class="img_logo" href="#"><img src="../../../assets/logo.png" alt="logo"></a>
+        <div class="icon-menu">
+          <ul>
+            <li><a href="#">
+                <mat-icon>search</mat-icon>
+              </a></li>
+          </ul>
+          <ul>
+            <li><a [routerLink]="['home']">
+                <mat-icon>home</mat-icon>
+              </a></li>
+          </ul>
+        </div>
+      </mat-toolbar>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

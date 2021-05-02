@@ -1,12 +1,7 @@
-<!-- <h2 class="title-movielist"> {{ title }} </h2> -->
-<div class="row-movie">
-    <div class="movie-list" *ngFor="let genre of genres; index as i">
-        <app-movie-list-template
-            [title]="genre.name"
-            [movieList]="moviesListGenre[i]"
-        >
-        </app-movie-list-template>
-    </div>
+<div class="movie-list" *ngFor="let genre of genres; index as i">
+    <app-movie-list-template
+        [title]="genre.name"
+        [movieList]="moviesListGenre[i]"
+    >
+    </app-movie-list-template>
 </div>
-
-<!-- [moviesListGenre]="moviesListGenre[i]" -->

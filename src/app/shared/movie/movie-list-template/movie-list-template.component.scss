@@ -1,4 +1,9 @@
-.movieRow{
+// .movie-list {
+//     -webkit-animation: header__banner 1s 2.5s backwards;
+//     animation: header__banner 1s 2.5s backwards;
+// }
+
+.movieRow {
     display: flex;
     flex-flow: row;
     margin: 10px 0;
@@ -6,9 +11,18 @@
     overflow-x: scroll;
 }
 
-.gender{
+.gender {
     margin-left: 15px;
-    font-size: medium;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
+}
+
+@media (min-width: 768px) {
+    .gender {
+        margin-left: 15px;
+        font-size: 28px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+    }
 }

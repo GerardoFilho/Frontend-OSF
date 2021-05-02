@@ -1,4 +1,5 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { FirebaseService } from './../../../services/firebase.service';
+import { Component, OnInit, HostListener, Output, EventEmitter } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -9,6 +10,7 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./menu-nav.component.scss']
 })
 export class MenuNavComponent {
+  @Output() isLogout = new EventEmitter<void>()
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -16,7 +18,7 @@ export class MenuNavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, public firebaseService : FirebaseService) {}
 
   header__variable = false;
   @HostListener("document:scroll")
@@ -26,6 +28,11 @@ export class MenuNavComponent {
     } else {
       this.header__variable = false;
     }
+  }
+
+  logout(){
+    this.firebaseService.logout()
+    this.isLogout.emit()
   }
 
 }

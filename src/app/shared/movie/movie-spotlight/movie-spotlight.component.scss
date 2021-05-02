@@ -1,9 +1,11 @@
 .header__banner {
   display: flex;
-  width:100%;
+  width: 100%;
   left: 0;
   flex-direction: column;
   justify-content: center;
+  // -webkit-animation: header__banner 1s 2.5s backwards;
+	//         animation: header__banner 1s 2.5s backwards; VAI FICAR PRO LOGIN
 
   .title-spotlight {
     position: absolute;
@@ -12,3 +14,37 @@
     color: lightgray;
   }
 } 
+
+@media (min-width: 768px){
+  .header__banner {
+    img{
+    height: 50rem;
+    }
+  }
+
+}
+@media (min-width: 1024px){
+  .header__banner {
+    img{
+    height: 70rem;
+    }
+  }
+
+}
+
+// @-webkit-keyframes header__banner {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+// @keyframes header__banner {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }

@@ -3,10 +3,37 @@
     margin: 0 5px;
 
     img {
-        height: 150px;
-        width: 100px;
+        height: 9rem;
+        width: 6rem;
         border: 2px solid white;
         border-radius: 5px;
     }
+}
 
+@media (max-width: 320px) {
+    .movie-card {
+        display: flex;
+        margin: 0 5px;
+
+        img {
+            height: 8rem;
+            width: 5rem;
+            border: 2px solid white;
+            border-radius: 6px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .movie-card {
+        display: flex;
+        margin: 0 5px;
+
+        img {
+            height: 15rem;
+            width: 11rem;
+            border: 2px solid white;
+            border-radius: 6px;
+        }
+    }
 }

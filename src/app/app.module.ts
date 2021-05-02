@@ -18,6 +18,12 @@ import { MovieListTemplateComponent } from './shared/movie/movie-list-template/m
 import { FavouriteIconComponent } from './shared/favourite-icon/favourite-icon/favourite-icon.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 import { MovieDetailComponent } from './shared/movie/movie-detail/movie-detail.component';
+import { LazyPipe } from './pipes/lazy.pipe';
+import { OpeningComponent } from './pages/opening/opening.component';
+import { AngularFireModule } from '@angular/fire';
+import { LoginComponent } from './pages/login/login.component'
+import { FirebaseService } from './services/firebase.service';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,10 @@ import { MovieDetailComponent } from './shared/movie/movie-detail/movie-detail.c
     MovieListTemplateComponent,
     FavouriteIconComponent,
     DetailPageComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    LazyPipe,
+    OpeningComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +50,18 @@ import { MovieDetailComponent } from './shared/movie/movie-detail/movie-detail.c
     HttpClientModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBSqCnTwXBNTK7eVpTOgGIwXBl-zuUMOSs",
+      authDomain: "epic-movie-a0dc3.firebaseapp.com",
+      projectId: "epic-movie-a0dc3",
+      storageBucket: "epic-movie-a0dc3.appspot.com",
+      messagingSenderId: "10135547380",
+      appId: "1:10135547380:web:bbbff5a236e5db00b25da1"
+    })
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
