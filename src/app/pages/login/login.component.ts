@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FirebaseService } from '../../services/firebase.service'
 
 @Component({
@@ -9,9 +10,10 @@ import { FirebaseService } from '../../services/firebase.service'
 export class LoginComponent implements OnInit {
   title = 'firebase-angular-auth';
   isSignedIn = false
-  constructor(public firebaseService : FirebaseService) { }
+  constructor(public firebaseService : FirebaseService, private router: Router) { }
 
   ngOnInit(): void {
+    alert('Project only mobile, for now. Try on Iphone X or similar on dev tool :)');
     if(localStorage.getItem('user')!== null)
     this.isSignedIn= true
     else
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
     await this.firebaseService.signin(email,password)
     if(this.firebaseService.isLoggedIn)
     this.isSignedIn = true
+    this.router.navigate(['home'])
   }
   handleLogout(){
     this.isSignedIn = false
